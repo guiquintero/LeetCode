@@ -1,12 +1,12 @@
 function canPlaceFlowers(flowerbed: number[], n: number): boolean {
     
-    let t1 = 0, t2 = 20000;
+    let t1 = 0, count = 0;
 
 
     for(let i=0;i<flowerbed.length;i++){
         if(flowerbed[i]==1){
-            t1=i;
- 
+            count = i-t1;
+            
 
 
         }
