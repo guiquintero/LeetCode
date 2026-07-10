@@ -25,3 +25,26 @@ function reverseVowels(s: string): string {
 };
 
 console.log(reverseVowels("IceCreAm"));
+
+function reverseVowelsC(s: string): string {
+    const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+    const chars = s.split('');
+    let left = 0;
+    let right = chars.length - 1;
+
+    while (left < right) {
+        if (!vowels.has(chars[left])) {
+            left++;
+        } else if (!vowels.has(chars[right])) {
+            right--;
+        } else {
+            // ambos são vogais → troca
+            [chars[left], chars[right]] = [chars[right], chars[left]];
+            left++;
+            right--;
+        }
+    }
+
+    return chars.join('');
+}
+
